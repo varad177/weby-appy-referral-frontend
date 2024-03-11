@@ -6,7 +6,7 @@ import api from '../../axios/api'
 import { getUser } from '../getUser/getUser'
 import { userContext } from '../../App'
 import { Link, useNavigate } from 'react-router-dom'
-import { LinearProgress } from '@mui/material'
+import { LinearProgress, Pagination } from '@mui/material'
 import Navbar from '../Navbar/Navbar'
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -24,42 +24,68 @@ const DeleteReferrel = () => {
     const { userAuth, setUserAuth } = useContext(userContext);
 
 
+    const [search, setSearch] = useState({
+        search: "",
+    });
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalEntries, setTotalEntries] = useState(0);
+    const entriesPerPage = 10;
+    const totalPages = Math.ceil(totalEntries / entriesPerPage);
     useEffect(() => {
-        checkSignIn();
+        // checkSignIn();
+
     }, []);
+    useEffect(() => {
+        checkSignIn()
+        api.get("/get-entries-count").then((res) => {
+            console.log(res.data);
+            setTotalEntries(res.data);
+        });
+        getAllRef();
+
+    }, [search, currentPage])
+
+    const handlePageChange = (event, value) => {
+        setCurrentPage(value);
+    };
 
     const getAllRef = async () => {
-        setLoader(true)
+        setLoader(true);
         try {
-            const response = await api.get('/get-all-referels', {
-                headers: {
-                    'Authorization': `bearer ${userAuth && userAuth.access_token}`
+            const response = await api.post(
+                "/get-all-referels",
+                {
+                    search: search.search,
+                    page: currentPage,
+                },
+                {
+                    headers: {
+                        Authorization: `bearer ${userAuth && userAuth.access_token}`,
+                    },
                 }
-            });
+            );
             setReferrel(response.data);
-            setLoader(false)
+            setLoader(false);
         } catch (err) {
             console.log(err.message);
-            setLoader(false)
+            setLoader(false);
         }
     };
 
     const checkSignIn = async () => {
-        const user = await getUser();
-        console.log(user);
+        const user = sessionStorage.getItem("user");
+        const token = JSON.parse(user).access_token;
 
-        if (!user) {
-            return navigate('/login');
+        if (!token) {
+            return navigate("/login");
         }
+    };
 
-        await setUserAuth(user);
-
-        if (userAuth && userAuth.access_token == null) {
-            return navigate('/login');
-        }
-
-        // Only call getAllRef once after setting userAuth
-        getAllRef();
+    const handleSearch = (e) => {
+        setSearch((prevSearch) => ({
+            ...prevSearch,
+            [e.target.name]: e.target.value,
+        }));
     };
 
     const handleDelete = async (refId) => {
@@ -123,6 +149,17 @@ const DeleteReferrel = () => {
                         }}
                     />
                 }
+                <div className="flex justify-end w-full px-4 py-2">
+                    <input
+                        name="search"
+                        value={search.search}
+                        onChange={handleSearch}
+                        type="text"
+                        placeholder="search"
+                        className="input-box"
+                        autoComplete="off"
+                    />
+                </div>
                 {
                     referrel && referrel.map((data, i) => {
 
@@ -148,6 +185,14 @@ const DeleteReferrel = () => {
                         )
                     })
                 }
+                <div className="w-full flex justify-end py-4 ">
+                    <Pagination
+                        page={currentPage}
+                        onChange={handlePageChange}
+                        count={totalPages}
+                        color="primary"
+                    />
+                </div>
             </section >
         </>
     )

@@ -75,6 +75,29 @@ const CreateReferrel = () => {
     };
 
     const handleSubmit = (e) => {
+        if (!info.companyName) {
+            return toast.error('company name is required.')
+
+        }
+        if (!info.email) {
+            return toast.error('email is required.')
+
+        }
+
+
+        if (!info.mobileNumber) {
+            return toast.error('mobile number is required.')
+
+        }
+        if (!info.websiteURL) {
+            return toast.error('website URL is required.')
+
+        }
+        if (!info.description) {
+            return toast.error('Description is required.')
+
+        }
+      
         e.preventDefault();
 
         const data = new FormData()
@@ -219,7 +242,7 @@ const CreateReferrel = () => {
                             </div>
                             <div className="md:w-[50%] w-full space-y-2'" >
                                 <label htmlFor="logoURL" className="max-md:hidden border bg-orange-500 w-full h-full flex items-center justify-center text-2xl text-white rounded-md">
-Add Logo
+                                    Add Logo
                                 </label>
                             </div>
 
@@ -242,7 +265,8 @@ Add Logo
 
                         <div className="w-full flex mt-4 ">
                             <button onClick={handleSubmit} className="btn mx-auto">
-                                Create Referrel
+    
+                                {referrelid ? "update" : 'Create'} Referrel
                             </button>
                         </div>
                     </div>

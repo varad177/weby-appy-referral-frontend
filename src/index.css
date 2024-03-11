@@ -63,3 +63,19 @@
 .MuiChartsLegend-mark{
   fill:  rgb(255, 105, 51) !important;
 }
+
+.input-box {
+  border-radius: 0.375rem; /* Assuming you want a standard 6px border-radius */
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.252); /* To accommodate the placeholder position */
+}
+
+.input-box::placeholder {
+  color: black; /* Use your desired placeholder text color */
+}
+
+.input-box:focus {
+  outline: #f64e60;
+  border: 1px solid red;
+}

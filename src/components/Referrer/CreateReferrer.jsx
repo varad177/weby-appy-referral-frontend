@@ -83,6 +83,32 @@ const CreateReferrer = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (info.email === "") {
+            toast.error("Email is required.");
+            return;
+        }
+        if (info.password === "") {
+            toast.error("Password is required.");
+            return;
+        }
+        if (info.companyName === "") {
+            toast.error("Company name is required.");
+            return;
+        }
+        if (info.contact === "") {
+            toast.error("Contact is required.");
+            return;
+        }
+        if (info.websiteURL === "") {
+            toast.error("Website URL is required.");
+            return;
+        }
+        if (info.logoURL === "") {
+            toast.error("Logo URL is required.");
+            return;
+        }
+      
+
 
         const data = new FormData()
         data.append('email', info.email)

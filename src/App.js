@@ -37,7 +37,7 @@ function App() {
   const [userAuth, setUserAuth] = useState();
 
   useEffect(() => {
-    checkSignIn();
+    // checkSignIn();
   }, []);
 
   const checkSignIn = async () => {

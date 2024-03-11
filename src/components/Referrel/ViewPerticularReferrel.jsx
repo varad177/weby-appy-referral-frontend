@@ -155,7 +155,7 @@ const ViewPerticularReferrel = () => {
 
 
             <div className='w-full p-4 flex flex-col items-center gap-4 '>
-              <img src={referrel.logoURL} className='mx-auto h-32 w-32' alt="logo" />
+              <img src={referrel.logoURL} className='mx-auto object-contain h-32 w-32' alt="logo" />
               <div className='flex items-center gap-4 max-md:flex-col'>
                 <p className='text-orange-600 text-sm '>created By:- <span className='text-black '>{referrel.referrelBy}</span></p>
                 <p className='text-orange-600 text-sm '>created At:- <span className='text-black '>{referrel.createdAt}</span></p>

@@ -41,10 +41,10 @@ const Navbar = () => {
     const handleClose = (value) => {
         setOpen(false);
         setSelectedValue(value);
-    
+
     };
 
-    
+
 
     return (
         <>
@@ -65,9 +65,11 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <button onClick={handleSignOut} className="btn mt-8 mx-auto ">Sign Out</button>
                 </div>
-                <div className="flex items-center">
-                    <button onClick={()=>navigte('/admin-panel/weby-appy-all-referrels')} className="btn mt-4 mx-auto ">ADMIN PANEL</button>
-                </div>
+                {
+                    user && user.role == 'admin' && <div className="flex items-center">
+                        <button onClick={() => navigte('/admin-panel/weby-appy-all-referrels')} className="btn mt-4 mx-auto ">ADMIN PANEL</button>
+                    </div>
+                }
 
                 <div className="w-full mt-4 flex items-center">
                     <Link className="text-center  w-full">
@@ -88,7 +90,7 @@ const Navbar = () => {
                     </ul>
 
                 </div>
-            </div>
+            </div >
             <div className="w-full h-[4rem] shadow-md flex justify-between items-center p-3">
                 <div className="h-full">
                     <img src={logo} alt="logo" className="img-fluid h-full " />

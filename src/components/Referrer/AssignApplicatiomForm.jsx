@@ -131,7 +131,7 @@ const AssignApplicatiomForm = () => {
                 />}
                 <section className='w-full h-auto min-h-screen  bg-[#EDEDED] p-8 -z-10 max-md:p-4'>
 
-                    <div className='w-[96%] h-auto md:w-[80%] bg-white mx-auto rounded-md '>
+                    <div className='w-[96%] h-auto md:w-[80%] shadow-md bg-white mx-auto rounded-md '>
                         <div className='flex flex-col items-center p-4  '>
                             <div className="w-full ">
                                 <h1 className="text-center text-xl mb-4 md:text-4xl font-bold text-orange-500">Assign Task</h1>
@@ -140,31 +140,31 @@ const AssignApplicatiomForm = () => {
                             <h3 className='text-center text-xl font-bold max-md:mt-4'>For Referrer</h3>
 
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('crr')} onChange={handleChange} type="checkbox" value="crr" id="defaultCheck1" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('crr')} onChange={handleChange} type="checkbox" value="crr" id="defaultCheck1" />
                                 <label className="form-check-label" htmlFor="defaultCheck1">
                                     Create Referrer
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('vrr')} onChange={handleChange} type="checkbox" value="vrr" id="defaultCheck2" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('vrr')} onChange={handleChange} type="checkbox" value="vrr" id="defaultCheck2" />
                                 <label className="form-check-label" htmlFor="defaultCheck2">
                                     View Referrers
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('err')} onChange={handleChange} type="checkbox" value="err" id="defaultCheck3" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('err')} onChange={handleChange} type="checkbox" value="err" id="defaultCheck3" />
                                 <label className="form-check-label" htmlFor="defaultCheck3">
                                     Edit Referrers
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('drr')} onChange={handleChange} type="checkbox" value="drr" id="defaultCheck4" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('drr')} onChange={handleChange} type="checkbox" value="drr" id="defaultCheck4" />
                                 <label className="form-check-label" htmlFor="defaultCheck4">
                                     Delete Referrers
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('ama')} onChange={handleChange} type="checkbox" value="ama" id="defaultCheck4" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('ama')} onChange={handleChange} type="checkbox" value="ama" id="defaultCheck4" />
                                 <label className="form-check-label" htmlFor="defaultCheck4">
                                     Assign Micro Applications
                                 </label>
@@ -176,25 +176,25 @@ const AssignApplicatiomForm = () => {
                             </h3>
 
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('crl')} onChange={handleChange} type="checkbox" value="crl" id="defaultCheck5" />
+                                <input className="form-check-input  cursor-pointer" checked={isTaskSelected('crl')} onChange={handleChange} type="checkbox" value="crl" id="defaultCheck5" />
                                 <label className="form-check-label" htmlFor="defaultCheck5">
                                     Create Referrel
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('vrl')} onChange={handleChange} type="checkbox" value="vrl" id="defaultCheck6" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('vrl')} onChange={handleChange} type="checkbox" value="vrl" id="defaultCheck6" />
                                 <label className="form-check-label" htmlFor="defaultCheck6">
                                     View Referrel
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('erl')} onChange={handleChange} type="checkbox" value="erl" id="defaultCheck7" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('erl')} onChange={handleChange} type="checkbox" value="erl" id="defaultCheck7" />
                                 <label className="form-check-label" htmlFor="defaultCheck7">
                                     Edit Referrel
                                 </label>
                             </div>
                             <div className='w-full flex gap-4'>
-                                <input className="form-check-input" checked={isTaskSelected('drl')} onChange={handleChange} type="checkbox" value="drl" id="defaultCheck8" />
+                                <input className="form-check-input cursor-pointer" checked={isTaskSelected('drl')} onChange={handleChange} type="checkbox" value="drl" id="defaultCheck8" />
                                 <label className="form-check-label" htmlFor="defaultCheck8">
                                     Delete Referrel
                                 </label>

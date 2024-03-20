@@ -136,12 +136,13 @@ const Login = () => {
                 <hr className="mb-6 border-t" />
 
                 <div className="text-center">
-                  <Link
-                    className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                    to="#"
+                  <div
+                  onClick={()=>navigate('/referrel/forgot-password')}
+                    className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800 cursor-pointer"
+                  
                   >
                     Forgot Password?
-                  </Link>
+                  </div>
                 </div>
               </form>
             </div>

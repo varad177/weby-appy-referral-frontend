@@ -113,7 +113,7 @@ const AssignApplication = () => {
                         <i class={"fa-solid fa-eye" + (selectedUserId === user._id ? "-slash" : "")}></i>
                       </button>
                     </div>
-                    <div onClick={()=>navigate(`/assign-micro-application/${user._id}`)} className="absolute max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl">
+                    <div onClick={()=>navigate(`/assign-micro-application/${user._id}`)} className="absolute max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl cursor-pointer">
                       <i className="fa-regular fa-pen-to-square"></i>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const AssignApplication = () => {
                         {' '}
                         <i className="text-orange-500 fa-solid fa-phone"></i> {user.contact}
                       </h1>
-                      <i onClick={()=>navigate(`/assign-micro-application/${user._id}`)} className="fa-regular text-white rounded-md mb-2 text-center fa-pen-to-square mx-auto py-2 px-4 bg-orange-500"></i>
+                      <i onClick={()=>navigate(`/assign-micro-application/${user._id}`)} className="fa-regular text-white rounded-md mb-2 text-center fa-pen-to-square mx-auto py-2 px-4 bg-orange-500 cursor-pointer"></i>
                     </div>
                   )}
                 </div>

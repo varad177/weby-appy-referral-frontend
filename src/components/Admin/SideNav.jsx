@@ -92,6 +92,15 @@ const SideNav = () => {
                     <br />
                     <br />
                     <NavLink
+                        to={"/admin-panel/user-monthly-analysis"}
+                        onClick={(e) => setPageState(e.target.innerText)}
+                        className="sidebar-link"
+                    >
+                        User Monthly Analitics
+                    </NavLink>
+                    <br />
+                    <br />
+                    <NavLink
                         to={"/admin-panel/monthly-analytics"}
                         onClick={(e) => setPageState(e.target.innerText)}
                         className="sidebar-link"

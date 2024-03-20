@@ -30,6 +30,10 @@ import InCompleteReferrel from "./components/Admin/InCompleteReferrel";
 import MonthlyAnalyticsChart from "./components/Admin/MonthlyAnalytics";
 import BarGraph from "./components/Admin/MonthlyAnalytics";
 import MonthlyAnalysisOfCompletedRef from "./components/Admin/MonthlyAnalysisOfCompletedRef";
+import ResetPassWord from "./components/Referrer/ResetPassword";
+import ForgotPassword from "./components/Authentication/ForgotPassword";
+import ForgotResetPassword from "./components/Authentication/ForgotResetPassword";
+import UserMonthAnalysis from "./components/Admin/UserMonthAnalysis";
 
 export const userContext = createContext({});
 
@@ -68,6 +72,10 @@ function App() {
           />
           {/* <Route path="/notification" element={<Notification />} /> */}
           <Route path="/edit-referrel" element={<EditReferrel />} />
+          <Route path="/referrel/reset-password" element={<ResetPassWord />} />
+          <Route path="/referrel/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-your-password" element={<ForgotResetPassword />} />
+
           <Route path="/delete-referrel" element={<DeleteReferrel />} />
           <Route path="/assign-application" element={<AssignApplication />} />
           <Route
@@ -96,6 +104,10 @@ function App() {
             <Route
               path="completed-referrel-monthly-analytics"
               element={<MonthlyAnalysisOfCompletedRef />}
+            />
+            <Route
+              path="user-monthly-analysis"
+              element={<UserMonthAnalysis />}
             />
           </Route>
         </Routes>

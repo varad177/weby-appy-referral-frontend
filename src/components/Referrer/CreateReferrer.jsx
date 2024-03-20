@@ -173,7 +173,7 @@ const CreateReferrer = () => {
             }
 
             <section className='w-full min-h-screen h-auto max-md:p-4 p-16 bg-[#EDEDED]'>
-                <div className='w-full h-auto rounded-md bg-white p-4 md:p-12 '>
+                <div className='w-full shadow-md h-auto rounded-md bg-white p-4 md:p-12 '>
 
 
 
@@ -229,7 +229,7 @@ const CreateReferrer = () => {
                             </div>
                         </div>
                         <div className='w-full flex mt-4 '>
-                            <button onClick={handleSubmit} className='btn mx-auto'>Create Referrer</button>
+                            <button onClick={handleSubmit} className='btn mx-auto'>{id ? "Edit Referrer":"Create Referrer"}</button>
                         </div>
                     </div>
 

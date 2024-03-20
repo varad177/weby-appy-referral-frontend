@@ -113,7 +113,7 @@ const EditReferrer = () => {
                         <i class={"fa-solid fa-eye" + (selectedUserId === user._id ? "-slash" : "")}></i>
                       </button>
                     </div>
-                    <div onClick={()=>navigate(`/create-referrer/${user._id}`)} className="absolute max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl">
+                    <div onClick={()=>navigate(`/create-referrer/${user._id}`)} className="absolute cursor-pointer max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl">
                       <i className="fa-solid fa-pen-nib"></i>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const EditReferrer = () => {
                         {' '}
                         <i className="text-orange-500 fa-solid fa-phone"></i> {user.contact}
                       </h1>
-                      <i onClick={()=>navigate(`/create-referrer/${user._id}`)} className="fa-solid text-white rounded-md mb-2 text-center fa-pen-nib mx-auto py-2 px-4 bg-orange-500"></i>
+                      <i onClick={()=>navigate(`/create-referrer/${user._id}`)} className="fa-solid cursor-pointer text-white rounded-md mb-2 text-center fa-pen-nib mx-auto py-2 px-4 bg-orange-500"></i>
                     </div>
                   )}
                 </div>

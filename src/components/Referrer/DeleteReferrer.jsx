@@ -72,7 +72,7 @@ const DeleteReferrer = () => {
                     <Modal open={true} onClose={onClose} center>
                         <div>
                             <h2 className='font-bold'>Confirm Deletion</h2>
-                            <p className='my-3'>Are you sure you want to delete this referrar?</p>
+                            <p className='my-3'>Are you sure you want to delete this referrer?</p>
                             <button className='btn' onClick={async () => {
                                 onClose();
                                 setLoader(true);
@@ -89,7 +89,7 @@ const DeleteReferrer = () => {
                                     setLoader(false);
 
                                 } else {
-                                    throw new Error("Failed to delete referrar");
+                                    throw new Error("Failed to delete referrer");
                                 }
                             }}>
                                 Yes
@@ -117,7 +117,12 @@ const DeleteReferrer = () => {
         <>
             <Navbar />
             {loader ? (
-                <Loader />
+                <LinearProgress
+                    color="inherit"
+                    style={{
+                        color: '#F26722',
+                    }}
+                />
             ) : users.length ? (
                 <section className="w-full mx-auto bg-[#EDEDED] min-h-screen h-auto p-4">
                     <div className="p-4 rounded-md bg-white md:p-8 border w-full md:w-[65%] mx-auto shadow-md">
@@ -162,7 +167,7 @@ const DeleteReferrer = () => {
                                                 <i class={"fa-solid fa-eye" + (selectedUserId === user._id ? "-slash" : "")}></i>
                                             </button>
                                         </div>
-                                        <div onClick={() => { handleDelete(user._id) }} className="absolute max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl">
+                                        <div onClick={() => { handleDelete(user._id) }} className="absolute max-md:hidden right-0 top-0 bottom-0 bg-orange-500 w-[30px] h-full flex items-center justify-center text-white font-bold text-xl cursor-pointer">
                                             <i className="fa-solid fa-trash"></i>
                                         </div>
                                     </div>
@@ -176,7 +181,7 @@ const DeleteReferrer = () => {
                                                 {' '}
                                                 <i className="text-orange-500 fa-solid fa-phone"></i> {user.contact}
                                             </h1>
-                                            <i onClick={() => { handleDelete(user._id) }} className="fa-solid text-white rounded-md mb-2 text-center fa-trash mx-auto py-2 px-4 bg-orange-500"></i>
+                                            <i onClick={() => { handleDelete(user._id) }} className="fa-solid text-white cursor-pointer rounded-md mb-2 text-center fa-trash mx-auto py-2 px-4 bg-orange-500"></i>
                                         </div>
                                     )}
                                 </div>

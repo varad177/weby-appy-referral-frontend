@@ -45,6 +45,11 @@ const Navbar = () => {
     };
 
 
+    const handleNavigate = () => {
+        setOpen(false);
+        return navigte('/referrel/reset-password')
+    }
+
 
     return (
         <>
@@ -72,9 +77,9 @@ const Navbar = () => {
                 }
 
                 <div className="w-full mt-4 flex items-center">
-                    <Link className="text-center  w-full">
+                    <div onClick={handleNavigate} className="text-center  w-full cursor-pointer">
                         <i className="fa-solid fa-lock mr-2 text-orange-600"></i>Change Password
-                    </Link>
+                    </div>
                 </div>
                 <hr className="opacity-10 mt-4 " />
                 <div className="">
@@ -84,7 +89,7 @@ const Navbar = () => {
                         </li>
                         <hr className="opacity-10" />
                         <li className="text-center text-orange-600 py-3">
-                            <Link to={""}>Contact</Link>
+                            <Link target="_blank" to={"https://webyappy.com/contact"}>Contact</Link>
                         </li>
                         <hr className="opacity-10" />
                     </ul>
